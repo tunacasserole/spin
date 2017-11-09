@@ -1,0 +1,7 @@
+<%= form_with model: resource, url: ( resource.new_record? ? "/albums" : "/albums/#{resource.id}" ), method: ( resource.new_record? ? :post  : :put ), html: { id: 'album-form' } do |f| %>
+<%= f.label 'Album Name' %>
+<%= f.text_field :name, label: 'Album Name: ' %>
+<%= f.text_field :artist, label: 'Album Name: ' %>
+<%= f.number_field :year, label: 'Album Name: ' %>
+<%= f.text_field :condition, label: 'Album Name: ' %>
+<% end %>

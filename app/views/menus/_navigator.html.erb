@@ -1,0 +1,27 @@
+<aside class="sidebar">
+  <div class="scrollbar-inner">
+    <div class="user">
+      <div class="user__info" data-toggle="dropdown">
+        <%= image_tag("avatars/aaron-henderson.jpg", class: 'user__img') %>
+
+        <div>
+          <div class="user__name">Aaron Henderson</div>
+          <div class="user__email">aaron@buildit.io</div>
+        </div>
+      </div>
+
+      <div class="dropdown-menu">
+        <%= link_to("<i class='zmdi zmdi-assignment-account'></i> &nbsp View Profile ".html_safe, "/admins/#{current_admin.id}/edit", class: 'dropdown-item')%>
+        <%= link_to("<i class='zmdi zmdi-power'></i> &nbsp Sign Out".html_safe, destroy_admin_session_path, method: :delete, class: 'dropdown-item') %>
+      </div>
+    </div>
+
+    <ul class="navigation">
+
+      <%= render partial: '/menus/general' %>
+      <%= render partial: '/menus/tools'  %>
+      <%= render partial: '/menus/security' %>
+
+    </ul>
+  </div>
+</aside>

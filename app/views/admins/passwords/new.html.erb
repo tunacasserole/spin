@@ -1,0 +1,45 @@
+<style type="text/css">
+  .login-content {
+  }
+</style>
+
+<div class="login-content">
+  <!-- Login -->
+  <div class="lc-block toggled" id="l-login">
+    <div class="lcb-form">
+      <%= image_tag('logo.png') %>
+
+      <div>
+      </div>
+      <h4 class="text-left m-b-20">Reset Password</h4>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <div class="fg-line email">
+          <%= f.label "Email Address", class: "fg-label" %>
+          <input type="text" class="form-control input-lg" placeholder="e.g. peter.pan@neverland.com" id="admin_email" name="user[email]">
+        </div>
+      </div>
+
+      <%= f.button 'Reset Password', class: 'btn btn-primary btn-lg m-b-20 p-r-30 p-l-30 waves-effect', style: 'width: 100%' %>
+
+      <div class="f-16 m-b-20">Not needed? Return to <%= link_to "Sign in", new_admin_session_path %>!</div>
+
+      <div class="text-center m-t-10">
+      </div>
+      <div class="terms" style="color: #999">
+      </div>
+
+
+
+      <!-- <a href="" class="btn btn-login btn-success btn-float"><i class="zmdi zmdi-arrow-forward"></i></a> -->
+      <!-- <%= f.button(type: 'submit', class: "btn btn-login btn-warning btn-float") do %>
+      <i class="zmdi zmdi-sign-in"></i>
+      <% end %> -->
+      <% end %>
+    </div>
+
+
+
+  </div>
+
+</div>
+

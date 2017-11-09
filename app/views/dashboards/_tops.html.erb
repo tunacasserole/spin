@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header">
+    <h2 class="card-title">Top Artists</h2>
+    <small class="card-subtitle">Here are the most prolific artists in your collection.</small>
+  </div>
+
+  <div class="listview">
+    <% @artists.each do |artist| %>
+
+    <a href="" class="listview__item">
+      <div class="listview__content">
+        <div class="listview__heading"><%= artist.name %> (<%= artist.album_count %>)</div>
+
+        <div class="progress">
+          <div class="progress-bar bg-warning"  style="width: <%= artist.album_count * 10 %>%" aria-valuenow="<%= artist.album_count %>" aria-valuemin="0" aria-valuemax="10"></div>
+        </div>
+      </div>
+    </a>
+
+    <% end %>
+
+
+    <a href="/artists" class="view-more">View All Artists</a>
+  </div>
+</div>

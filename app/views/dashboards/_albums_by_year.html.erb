@@ -1,0 +1,14 @@
+<div class="card">
+	<div class="card-header">
+		<h2 class="card-title">Yearly Album Coverage</h2>
+		<small class="card-subtitle">Check out the number of albums for each year in your collection.</small>
+	</div>
+
+	<div class="card-block">
+		<div class="flot-chart flot-curved-line"></div>
+		<div class="flot-chart-legends flot-chart-legends--curved"></div>
+	</div>
+</div>
+
+<%= content_tag :div, class: "temp_information", data: @albums_by_year do %>
+<% end %>

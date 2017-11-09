@@ -1,0 +1,40 @@
+<button class="btn btn-outline-<%= resource.new_record? ? 'primary' : 'primary' %> btn--icon-text waves-effect" data-toggle="modal" data-target="#album-modal" data-id="new">
+  <span>
+    <i class="zmdi <%= resource.new_record? ? 'zmdi-plus' : 'zmdi-menu' %>"></i>
+    &nbsp
+    <%= resource.new_record? ? 'Add' : 'Edit' %> Album
+  </span>
+</button>
+
+<div class="modal fade" id="album-modal" tabindex="-1" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="text-right">
+      <% unless resource.new_record? %>
+      <%= link_to "<i class='actions__item zmdi zmdi-favorite-outline' style='color: grey'></i>".html_safe, "", data: {confirm: "Follow the #{@album.name} Album?"},  method: :put %>
+      <%= link_to "<i class='actions__item zmdi zmdi-delete' style='color: grey'></i>".html_safe, "/albums/#{@album.id}", data: {confirm: 'Destroy this album?'},  method: :delete %>
+      <% end %>
+    </div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4><%= resource.new_record? ? 'Add' : 'Edit' %> an Album</h4>
+      </div>
+      <div class="modal-body">
+        <%= render partial: 'albums/form', locals: { resource: resource } %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CANCEL</button>
+        <%= link_to (resource.new_record? ? 'CREATE' : 'UPDATE'), "#", class: "btn btn-primary waves-effect", onclick: "$('#album-form').submit()" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  $( document ).on('turbolinks:load', function() {
+    var height = $(window).height() - 200;
+
+    $('#albumModal .modal-body').height(200);
+
+  });
+</script>

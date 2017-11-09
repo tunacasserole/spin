@@ -1,0 +1,45 @@
+<section id="content">
+  <div class="container">
+
+    <div class="card">
+      <div class="card-header ch-alt m-b-20">
+        <h2><%= title || resource.name.class.name %>
+          <small><%= tagline %></small>
+        </h2>
+        <%= render partial: 'core/actions' %>
+        <a href="<%= new_package_path %>" class="btn bgm-red btn-float waves-effect"><i class="zmdi zmdi-plus"></i>
+        </a>
+      </div>
+
+      <div class="table-responsive">
+        <table id="grid-packages" class="table">
+          <thead>
+            <tr>
+              <th data-column-id="id" data-type="numeric" data-identifier="true" data-order="desc">ID</th>
+              <th data-column-id="identifier">Identifier</th>
+              <th data-column-id="enabled" data-converter="yesno">Enabled</th>
+              <th data-column-id="package_type">Type</th>
+              <th data-column-id="priority">Priority</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<%= content_for :body_end do %>
+<%= init_grid(
+              "grid-packages",
+              url: "/packages.json",
+              primaryKey: "id",
+              formatters: {
+
+              },
+              handlers: {
+                click: { fn: :inspect, url: "/packages", identifier: 'id' }
+              }
+              ) %>
+              <% end %>

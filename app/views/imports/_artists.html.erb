@@ -1,0 +1,14 @@
+<div id="album-front" class="card">
+  <div class="card-header bgm-black">
+    <h2>Import by Artist</h2>
+    <small>Upload a csv to quickly import your collection.
+    </small>
+        <%= link_to 'generate_seed', :controller => "tools", :action => "generate_seed",  method: 'post', remote: 'true' do |cc| %>
+    <button class="btn bgm-red btn-icon-text waves-effect ma-trigger pull-left ">
+      <i class="fa fa-gears"></i>
+      &nbsp GENERATE SEED
+    </button>
+    <% end %>
+
+  </div>
+</div>

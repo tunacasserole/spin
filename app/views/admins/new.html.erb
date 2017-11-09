@@ -1,0 +1,23 @@
+<ol class="breadcrumb">
+  <li><%= link_to "Back to Admins", admins_path %></li>
+  <li class="active">New Admin</li>
+</ol>
+
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h2>Create a new admin</h2>
+              <br>
+              <small>Configure a new hub system administrator with roles and privileges </small>
+                <%= render partial: 'admins/form', locals: {resource: @admin} %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

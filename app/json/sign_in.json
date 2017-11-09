@@ -1,0 +1,137 @@
+{
+  "start_page" : "sign in page",
+  "page_size" : "1024px,720px",
+  "font" : {
+    "family" : "arial",
+    "font_size" : "16",
+    "color" : "#ffffff",
+    "alignment" : "center"
+  },
+  "bgcolor" : "#000000",
+  "pages" : [
+    {
+      "type" : "page",
+      "name" : "sign in page",
+      "events" : [
+        { "select" : [ { "goto" : "sign in email" } ] }
+      ],
+      "content" : [
+        {
+          "type" : "image",
+          "name" : "sign in logo",
+          "alignment" : "center",
+          "position" : "6,1",
+          "size" : "2,2",
+          "url" : "http://logodomain.com/sling_logo.png"
+        },
+        {
+          "type" : "container",
+          "position" : "5,5",
+          "size" : "4,6",
+          "content" : [
+            {
+              "type" : "input",
+              "name" : "sign in email",
+              "position" : "1,1",
+              "size" : "12,2",
+              "prompt" : "Email Address",
+              "events" : {
+                "up" : [ { "goto" : "forgot password link" } ],
+                "left" : [ { "goto" : "forgot password link" } ],
+                "right" : [ { "goto" : "sign in password" } ],
+                "down" : [ { "goto" : "sign in password" } ],
+                "unfocus" : [
+                  { "store" : { "sign up email" : "<ignored>" } }
+                ]
+              }
+            },
+            {
+              "type" : "input",
+              "name" : "sign in password",
+              "position" : "1,4",
+              "size" : "12,2",
+              "prompt" : "Password",
+              "events" : {
+                "up" : [ { "goto" : "sign in email" } ],
+                "left" : [ { "goto" : "sign in email" } ],
+                "down" : [ { "goto" : "sign in submit button" } ],
+                "right" : [ { "goto" : "sign in submit button" } ],
+                "unfocus" : [
+                  { "store" : { "sign up email" : "<ignored>" } }
+                ]
+              }
+            },
+            {
+              "type" : "button",
+              "name" : "sign in submit button",
+              "size" : "12,2",
+              "position" : "1,8",
+              "content" : [
+                {
+                  "type" : "text",
+                  "name" : "sign in submit",
+                  "body" : "Sign In",
+                  "position" : "1,1",
+                  "size" : "12,12",
+                  "font" : {
+                    "font_size" : "24",
+                    "alignment" : "center"
+                  }
+                }
+              ],
+              "states" : {
+                "on" : {
+                  "bgcolor" : "#0000ff"
+                },
+                "off" : {
+                  "bgcolor" : "#000000"
+                }
+              },
+              "events" : {
+                "select" : [ { "submit" : "sign in submit button" } ],
+                "up" : [ { "goto" : "sign in password" } ],
+                "left" : [ { "goto" : "sign in password" } ],
+                "right" : [ { "goto" : "forgot password link" } ],
+                "down" : [ { "goto" : "forgot password link" } ]
+              }
+            },
+            {
+              "type" : "text",
+              "name" : "forgot link text",
+              "position" : "1,11",
+              "size" : "12,1",
+              "body" : [
+                {
+                  "name" : "forgot password link",
+                  "type" : "link",
+                  "phrase" : "Forgot Password?",
+                  "states" : {
+                    "on" : {
+                      "font" : {
+                        "color" : "#0000ff"
+                      }
+                    },
+                    "off" : {
+                      "font" : {
+                        "color" : "#ffffff"
+                      }
+                    }
+                  },
+                  "events" : [
+                    {
+                      "select" : [ { "submit" : "forgot password link" } ],
+                      "right" : [ { "goto" : "sign in email" }],
+                      "down" : [ { "goto" : "sign in email" }],
+                      "left" : [ { "goto" : "sign in submit button" }],
+                      "up" : [ { "goto" : "sign in submit button" }]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

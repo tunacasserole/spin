@@ -1,0 +1,18 @@
+.DS_Store
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+### CUSTOM
+config/database.yml
+
+db/schema.rb
+.idea
+
+/public/uploads
+
+# Ignore Seed Dump Files
+db/dumps/*_seed_*.rb

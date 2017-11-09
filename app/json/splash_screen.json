@@ -1,0 +1,672 @@
+{
+  "start_page": "splash screen",
+  "page_size": "1024px,720px",
+  "font": {
+    "family": "arial",
+    "font_size": "16",
+    "color": "#ffffff",
+    "alignment": "center"
+  },
+  "bgcolor": "#000000",
+  "pages": [
+    {
+      "type": "page",
+      "name": "splash screen",
+      "events" : [
+        { "select" : [
+          { "set" :
+          {
+            "target" : "splash languages container",
+            "status" : "off"
+          }
+          },
+          { "goto" : "splash 7 days free" }
+        ] }
+      ],
+      "states" : {
+        "sports" : { "url" : "http://logodomain.com/sports_splash.png" },
+        "english" : { "url" : "http://logodomain.com/english_splash.png" },
+        "french" : { "url" : "http://logodomain.com/french_splash.png" },
+        "lorem" : { "url" : "http://logodomain.com/lorem_splash.png" },
+        "ipsum" : { "url" : "http://logodomain.com/ipsum_splash.png" },
+        "hindi" : { "url" : "http://logodomain.com/hindi_splash.png" },
+        "arabic" : { "url" : "http://logodomain.com/arabic_splash.png" },
+        "spanish" : { "url" : "http://logodomain.com/spanish_splash.png" }
+      },
+      "image" : {
+        "name" : "splash screen background",
+        "url" : "http://logodomain.com/sports_splash.png"
+      },
+      "content" : [
+        {
+          "type" : "button",
+          "name" : "splash 7 days free",
+          "position" : "1,7",
+          "size" : "4,2",
+          "content" : [
+            {
+              "type" : "text",
+              "position" : "1,1",
+              "size" : "12,12",
+              "body" : "7 Days Free"
+            }
+          ],
+          "events" : [
+            { "select" : [{"submit" : "splash 7 days free"}] },
+            { "up" : [{"goto" : "splash explore other languages"}] },
+            { "left" : [{"goto" : "splash explore other languages"}] },
+            { "down" : [{"goto" : "splash sign in"}] },
+            { "right" : [{"goto" : "splash sign in"}] }
+          ]
+        },
+        {
+          "type" : "button",
+          "name" : "splash sign in",
+          "position" : "1,9",
+          "size" : "4,2",
+          "content" : [
+            {
+              "type" : "text",
+              "position" : "1,1",
+              "size" : "12,12",
+              "body" : "Sign In"
+            }
+          ],
+          "events" : [
+            { "select" : [{"submit" : "splash sign in"}] },
+            { "up" : [{"goto" : "splash 7 days free"}] },
+            { "left" : [{"goto" : "splash 7 days free"}] },
+            { "down" : [{"goto" : "splash explore other languages"}] },
+            { "right" : [{"goto" : "splash explore other languages"}] }
+          ]
+        },
+        {
+          "type" : "button",
+          "name" : "splash explore other languages",
+          "position" : "1,11",
+          "size" : "4,2",
+          "content" : [
+            {
+              "type" : "text",
+              "position" : "1,1",
+              "size" : "12,12",
+              "body" : "Explore Other Languages"
+            }
+          ],
+          "events" : [
+            { "select" : [
+              { "set" :
+              {
+                "target" : "splash languages container",
+                "status" : "on"
+              }
+              },
+              {"goto" : "splash languages sports"}
+            ] },
+            { "up" : [{"goto" : "splash sign in"}] },
+            { "left" : [{"goto" : "splash sign in"}] },
+            { "down" : [{"goto" : "splash 7 days free"}] },
+            { "right" : [{"goto" : "splash 7 days free"}] }
+          ]
+        },
+        {
+          "type" : "ribbon",
+          "name" : "splash languages container",
+          "position" : "1,11",
+          "size" : "12,2",
+          "is_visible" : false,
+          "events" : [
+            { "select" : [ { "goto" : "splash language sports" }] }
+          ],
+          "state" : {
+            "on" : { "is_visible" : true },
+            "off" : { "is_visible" : false }
+          },
+          "content" : [
+            {
+              "type" : "button",
+              "name" : "splash language sports",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/sports_thumb.png"
+                },
+                {
+                  "type" : "text",
+                  "bgcolor": "#000000",
+                  "position" : "1,10",
+                  "size" : "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body" : "Sports",
+                  "states" : {
+                    "off" : { "bgcolor": "#000000" },
+                    "on" : { "bgcolor": "#0000ff" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    {
+                      "set" : {
+                        "target" : "splash screen background",
+                        "status" : "sports"
+                      }
+                    },
+                    { "store" : { "language" : "sports" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language arabic" } ] },
+                { "left" : [ { "goto" : "splash language hindi" } ] },
+                { "down" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash 7 days free" }
+                ] },
+                { "up" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash sign in" }
+                ] }
+              ]
+            },
+            {
+              "type" : "button",
+              "name" : "splash language arabic",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/arabic_thumb.png"
+                },
+                {
+                  "type" : "text",
+                  "bgcolor": "#000000",
+                  "position" : "1,10",
+                  "size" : "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body" : "Arabic",
+                  "states" : {
+                    "off" : { "bgcolor": "#000000" },
+                    "on" : { "bgcolor": "#0000ff" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    {
+                      "set" : {
+                        "target" : "splash screen background",
+                        "status" : "arabic"
+                      }
+                    },
+                    { "store" : { "language" : "arabic" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language chinese" } ] },
+                { "left" : [ { "goto" : "splash language sports" } ] },
+                { "down" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash 7 days free" }
+                ] },
+                { "up" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash sign in" }
+                ] }
+              ]
+            },
+            {
+              "type" : "button",
+              "name" : "splash language chinese",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/chinese_thumb.png"
+                },
+                {
+                  "type" : "text",
+                  "bgcolor": "#000000",
+                  "position" : "1,10",
+                  "size" : "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body" : "Chinese",
+                  "states" : {
+                    "off" : { "bgcolor": "#000000" },
+                    "on" : { "bgcolor": "#0000ff" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    {
+                      "set" : {
+                        "target" : "splash screen background",
+                        "status" : "chinese"
+                      }
+                    },
+                    { "store" : { "language" : "chinese" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language lorem" } ] },
+                { "left" : [ { "goto" : "splash language arabic" } ] },
+                { "down" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash 7 days free" }
+                ] },
+                { "up" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash sign in" }
+                ] }
+              ]
+            },
+            {
+              "type" : "button",
+              "name" : "splash language lorem",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/lorem_thumb.png"
+                },
+                {
+                  "type": "text",
+                  "bgcolor": "#000000",
+                  "position": "1,10",
+                  "size": "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body": "Lorem",
+                  "states": {
+                    "off": { "bgcolor": "#000000" },
+                    "on": { "bgcolor": "#0000ff" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    {
+                      "set" : {
+                        "target" : "splash screen background",
+                        "status" : "lorem"
+                      }
+                    },
+                    { "store" : { "language" : "ipsum" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language ipsum" } ] },
+                { "left" : [ { "goto" : "splash language chinese" } ] },
+                { "down" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash 7 days free" }
+                ] },
+                { "up" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash sign in" }
+                ] }
+              ]
+            },
+            {
+              "type" : "button",
+              "name" : "splash language ipsum",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/ipsum_thumb.png"
+                },
+                {
+                  "type" : "text",
+                  "bgcolor": "#000000",
+                  "position" : "1,10",
+                  "size" : "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body" : "Ipsum",
+                  "states" : {
+                    "off" : { "bgcolor": "#000000" },
+                    "on" : { "bgcolor": "#0000ff" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    {
+                      "set" : {
+                        "target" : "splash screen background",
+                        "status" : "ipsum"
+                      }
+                    },
+                    { "store" : { "language" : "ipsum" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language english" } ] },
+                { "left" : [ { "goto" : "splash language lorem" } ] },
+                { "down" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash 7 days free" }
+                ] },
+                { "up" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash sign in" }
+                ] }
+              ]
+            },
+            {
+              "type" : "button",
+              "name" : "splash language english",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/english_thumb.png"
+                },
+                {
+                  "type" : "text",
+                  "bgcolor": "#000000",
+                  "position" : "1,10",
+                  "size" : "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body" : "English",
+                  "states" : {
+                    "off" : { "bgcolor": "#000000" },
+                    "on" : { "bgcolor": "#0000ff" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    {
+                      "set" : {
+                        "target" : "splash screen background",
+                        "status" : "english"
+                      }
+                    },
+                    { "store" : { "language" : "english" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language french" } ] },
+                { "left" : [ { "goto" : "splash language ipsum" } ] },
+                { "down" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash 7 days free" }
+                ] },
+                { "up" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash sign in" }
+                ] }
+              ]
+            },
+            {
+              "type" : "button",
+              "name" : "splash language french",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/french_thumb.png"
+                },
+                {
+                  "type" : "text",
+                  "bgcolor": "#000000",
+                  "position" : "1,10",
+                  "size" : "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body" : "French",
+                  "states" : {
+                    "off" : { "bgcolor": "#000000" },
+                    "on" : { "bgcolor": "#0000ff" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    {
+                      "set" : {
+                        "target" : "splash screen background",
+                        "status" : "french"
+                      }
+                    },
+                    { "store" : { "language" : "french" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language spanish" } ] },
+                { "left" : [ { "goto" : "splash language english" } ] },
+                { "down" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash 7 days free" }
+                ] },
+                { "up" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash sign in" }
+                ] }
+              ]
+            },
+            {
+              "type" : "button",
+              "name" : "splash language spanish",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/spanish_thumb.png"
+                },
+                {
+                  "type" : "text",
+                  "bgcolor": "#000000",
+                  "position" : "1,10",
+                  "size" : "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body" : "Spanish",
+                  "states" : {
+                    "off" : { "bgcolor": "#000000" },
+                    "on" : { "bgcolor": "#0000ff" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    {
+                      "set" : {
+                        "target" : "splash screen background",
+                        "status" : "spanish"
+                      }
+                    },
+                    { "store" : { "language" : "spanish" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language hindi" } ] },
+                { "left" : [ { "goto" : "splash language french" } ] },
+                { "down" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash 7 days free" }
+                ] },
+                { "up" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash sign in" }
+                ] }
+              ]
+            },
+            {
+              "type" : "button",
+              "name" : "splash language hindi",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/hindi_thumb.png"
+                },
+                {
+                  "type" : "text",
+                  "bgcolor": "#000000",
+                  "position" : "1,10",
+                  "size" : "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body" : "Hindi",
+                  "states" : {
+                    "off" : { "bgcolor": "#000000" },
+                    "on" : { "bgcolor": "#0000ff" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    {
+                      "set" : {
+                        "target" : "splash screen background",
+                        "status" : "hindi"
+                      }
+                    },
+                    { "store" : { "language" : "hindi" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language sports" } ] },
+                { "left" : [ { "goto" : "splash language spanish" } ] },
+                { "down" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash 7 days free" }
+                ] },
+                { "up" : [
+                  { "set" :
+                    {
+                      "target" : "splash languages container",
+                      "status" : "off"
+                    }
+                  },
+                  { "goto" : "splash sign in" }
+                ] }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

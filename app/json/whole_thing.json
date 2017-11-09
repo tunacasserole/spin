@@ -1,0 +1,803 @@
+{
+  "start_page": "splash screen",
+  "page_size": "1024px,720px",
+  "font": {
+    "family": "arial",
+    "font_size": "16",
+    "color": "white",
+    "alignment": "left"
+  },
+  "bgcolor": "black",
+  "pages" : [
+    {
+      "type": "page",
+      "name": "splash screen",
+      "events" : [
+        { "select" : [
+          { "turn_off" : "splash languages container" },
+          { "goto" : "splash 7 days free" }
+        ] }
+      ],
+      "image" : {
+        "name" : "splash screen background",
+        "url" : "http://logodomain.com/sports_splash.png"
+      },
+      "content" : [
+        {
+          "type" : "button",
+          "name" : "splash 7 days free",
+          "position" : "1,7",
+          "size" : "4,2",
+          "content" : [
+            {
+              "type" : "text",
+              "position" : "1,1",
+              "size" : "12,12",
+              "body" : "7 Days Free"
+            }
+          ],
+          "events" : [
+            { "select" : [{"submit" : "splash 7 days free"}] },
+            { "up" : [{"goto" : "splash explore other languages"}] },
+            { "left" : [{"goto" : "splash explore other languages"}] },
+            { "down" : [{"goto" : "splash sign in"}] },
+            { "right" : [{"goto" : "splash sign in"}] }
+          ]
+        },
+        {
+          "type" : "button",
+          "name" : "splash sign in",
+          "position" : "1,9",
+          "size" : "4,2",
+          "content" : [
+            {
+              "type" : "text",
+              "position" : "1,1",
+              "size" : "12,12",
+              "body" : "Sign In"
+            }
+          ],
+          "events" : [
+            { "select" : [{"submit" : "splash sign in"}] },
+            { "up" : [{"goto" : "splash 7 days free"}] },
+            { "left" : [{"goto" : "splash 7 days free"}] },
+            { "down" : [{"goto" : "splash explore other languages"}] },
+            { "right" : [{"goto" : "splash explore other languages"}] }
+          ]
+        },
+        {
+          "type" : "button",
+          "name" : "splash explore other languages",
+          "position" : "1,10",
+          "size" : "4,2",
+          "content" : [
+            {
+              "type" : "text",
+              "position" : "1,1",
+              "size" : "12,12",
+              "body" : "Explore Other Languages"
+            }
+          ],
+          "events" : [
+            { "select" : [
+              {"turn_on" : "splash languages container"},
+              {"goto" : "splash languages sports"}
+            ] },
+            { "up" : [{"goto" : "splash sign in"}] },
+            { "left" : [{"goto" : "splash sign in"}] },
+            { "down" : [{"goto" : "splash 7 days free"}] },
+            { "right" : [{"goto" : "splash 7 days free"}] }
+          ]
+        },
+        {
+          "type" : "ribbon",
+          "name" : "splash languages container",
+          "position" : "1,11",
+          "size" : "12,2",
+          "events" : [
+            { "select" : [ { "goto" : "splash language sports" }] }
+          ],
+          "state" : {
+            "on" : { "is_visible" : "true" },
+            "off" : { "is_visible" : "false" }
+          },
+          "content" : [
+            {
+              "type" : "button",
+              "name" : "splash language sports",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/sports_thumb.png"
+                },
+                {
+                  "type" : "text",
+                  "bgcolor": "black",
+                  "position" : "1,10",
+                  "size" : "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body" : "Sports",
+                  "states" : {
+                    "off" : { "bgcolor": "black" },
+                    "on" : { "bgcolor": "blue" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    { "change" : {
+                      "name" : "splash screen background",
+                      "style" : { "url" : "http://logodomain.com/sports_splash.png" }
+                    } },
+                    { "store" : { "language" : "sports" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language arabic" } ] },
+                { "left" : [ { "goto" : "splash language hindi" } ] },
+                { "up" : [ { "goto" : "splash sign in" } ] }
+              ]
+            },
+            {
+              "type" : "button",
+              "name" : "splash language arabic",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/arabic_thumb.png"
+                },
+                {
+                  "type" : "text",
+                  "bgcolor": "black",
+                  "position" : "1,10",
+                  "size" : "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body" : "Arabic",
+                  "states" : {
+                    "off" : { "bgcolor": "black" },
+                    "on" : { "bgcolor": "blue" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    { "change" : {
+                      "name" : "splash screen background",
+                      "style" : { "url" : "http://logodomain.com/arabic_splash.png" }
+                    } },
+                    { "store" : { "language" : "arabic" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language chinese" } ] },
+                { "left" : [ { "goto" : "splash language sports" } ] },
+                { "up" : [ { "goto" : "splash sign in" } ] }
+              ]
+            },
+            {
+              "type" : "button",
+              "name" : "splash language chinese",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/chinese_thumb.png"
+                },
+                {
+                  "type" : "text",
+                  "bgcolor": "black",
+                  "position" : "1,10",
+                  "size" : "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body" : "Chinese",
+                  "states" : {
+                    "off" : { "bgcolor": "black" },
+                    "on" : { "bgcolor": "blue" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    { "change" : {
+                      "name" : "splash screen background",
+                      "style" : { "url" : "http://logodomain.com/chinese_splash.png" }
+                    } },
+                    { "store" : { "language" : "chinese" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language lorem" } ] },
+                { "left" : [ { "goto" : "splash language arabic" } ] },
+                { "up" : [ { "goto" : "splash sign in" } ] }
+              ]
+            },
+            {
+              "type" : "button",
+              "name" : "splash language lorem",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/lorem_thumb.png"
+                },
+                {
+                  "type": "text",
+                  "bgcolor": "black",
+                  "position": "1,10",
+                  "size": "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body": "Lorem",
+                  "states": {
+                    "off": { "bgcolor": "black" },
+                    "on": { "bgcolor": "blue" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    { "change" : {
+                      "name" : "splash screen background",
+                      "style" : { "url" : "http://logodomain.com/lorem_splash.png" }
+                    } },
+                    { "store" : { "language" : "ipsum" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language ipsum" } ] },
+                { "left" : [ { "goto" : "splash language chinese" } ] },
+                { "up" : [ { "goto" : "splash sign in" } ] }
+              ]
+            },
+            {
+              "type" : "button",
+              "name" : "splash language ipsum",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/ipsum_thumb.png"
+                },
+                {
+                  "type" : "text",
+                  "bgcolor": "black",
+                  "position" : "1,10",
+                  "size" : "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body" : "Ipsum",
+                  "states" : {
+                    "off" : { "bgcolor": "black" },
+                    "on" : { "bgcolor": "blue" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    { "change" : {
+                      "name" : "splash screen background",
+                      "style" : { "url" : "http://logodomain.com/ipsum_splash.png" }
+                    } },
+                    { "store" : { "language" : "ipsum" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language english" } ] },
+                { "left" : [ { "goto" : "splash language lorem" } ] },
+                { "up" : [ { "goto" : "splash sign in" } ] }
+              ]
+            },
+            {
+              "type" : "button",
+              "name" : "splash language english",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/english_thumb.png"
+                },
+                {
+                  "type" : "text",
+                  "bgcolor": "black",
+                  "position" : "1,10",
+                  "size" : "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body" : "English",
+                  "states" : {
+                    "off" : { "bgcolor": "black" },
+                    "on" : { "bgcolor": "blue" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    { "change" : {
+                      "name" : "splash screen background",
+                      "style" : { "url" : "http://logodomain.com/english_splash.png" }
+                    } },
+                    { "store" : { "language" : "english" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language french" } ] },
+                { "left" : [ { "goto" : "splash language ipsum" } ] },
+                { "up" : [ { "goto" : "splash sign in" } ] }
+              ]
+            },
+            {
+              "type" : "button",
+              "name" : "splash language french",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/french_thumb.png"
+                },
+                {
+                  "type" : "text",
+                  "bgcolor": "black",
+                  "position" : "1,10",
+                  "size" : "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body" : "French",
+                  "states" : {
+                    "off" : { "bgcolor": "black" },
+                    "on" : { "bgcolor": "blue" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    { "change" : {
+                      "name" : "splash screen background",
+                      "style" : { "url" : "http://logodomain.com/french_splash.png" }
+                    } },
+                    { "store" : { "language" : "french" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language spanish" } ] },
+                { "left" : [ { "goto" : "splash language english" } ] },
+                { "up" : [ { "goto" : "splash sign in" } ] }
+              ]
+            },
+            {
+              "type" : "button",
+              "name" : "splash language spanish",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/spanish_thumb.png"
+                },
+                {
+                  "type" : "text",
+                  "bgcolor": "black",
+                  "position" : "1,10",
+                  "size" : "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body" : "Spanish",
+                  "states" : {
+                    "off" : { "bgcolor": "black" },
+                    "on" : { "bgcolor": "blue" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    { "change" : {
+                      "name" : "splash screen background",
+                      "style" : { "url" : "http://logodomain.com/spanish_splash.png" }
+                    } },
+                    { "store" : { "language" : "spanish" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language hindi" } ] },
+                { "left" : [ { "goto" : "splash language french" } ] },
+                { "up" : [ { "goto" : "splash sign in" } ] }
+              ]
+            },
+            {
+              "type" : "button",
+              "name" : "splash language hindi",
+              "size" : "2,12",
+              "content" : [
+                {
+                  "type" : "image",
+                  "position" : "1,1",
+                  "size" : "12,9",
+                  "url" : "http://logodomain.com/hindi_thumb.png"
+                },
+                {
+                  "type" : "text",
+                  "bgcolor": "black",
+                  "position" : "1,10",
+                  "size" : "12,3",
+                  "font": {
+                    "font_size": "12"
+                  },
+                  "body" : "Hindi",
+                  "states" : {
+                    "off" : { "bgcolor": "black" },
+                    "on" : { "bgcolor": "blue" }
+                  }
+                }
+              ],
+              "events" : [
+                {
+                  "select" : [
+                    { "change" : {
+                      "name" : "splash screen background",
+                      "style" : { "url" : "http://logodomain.com/hindi_splash.png" }
+                    } },
+                    { "store" : { "language" : "hindi" } }
+                  ]
+                },
+                { "right" : [ { "goto" : "splash language sports" } ] },
+                { "left" : [ { "goto" : "splash language spanish" } ] },
+                { "up" : [ { "goto" : "splash sign in" } ] }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type" : "page",
+      "name" : "main",
+      "content" : [
+        {
+          "type" : "text",
+          "name" : "main title",
+          "position" : "6,6",
+          "size" : "2,1",
+          "font" : {
+            "font_size" : "24"
+          },
+          "body" : "We're back!"
+        }
+      ]
+    },
+    {
+      "type" : "page",
+      "name" : "sign up page",
+      "content" : [
+        {
+          "type" : "image",
+          "name" : "sign up logo",
+          "alignment" : "center",
+          "position" : "6,1",
+          "size" : "2,2",
+          "states" : {
+            "off" : {
+              "url" : "http:"
+            }
+          }
+        },
+        {
+          "type" : "container",
+          "position" : "5,3",
+          "size" : "4,2",
+          "content" : [
+            {
+              "type" : "text",
+              "position" : "1,1",
+              "size" : "12,4",
+              "font" : {
+                "font_size" : "20",
+                "color" : "#cccccc"
+              },
+              "body" : "Create Your Account"
+            },
+            {
+              "type" : "text",
+              "position" : "1,5",
+              "size" : "12,3",
+              "font" : {
+                "color" : "#101010"
+              },
+              "body" : "Get access to the Best of Live TV."
+            },
+            {
+              "type" : "text",
+              "position" : "1,8",
+              "size" : "12,4",
+              "body" : "Now Watch 7 Days FREE"
+            }
+          ]
+        },
+        {
+          "type" : "container",
+          "position" : "8,3",
+          "size" : "6,5",
+          "content" : [
+            {
+              "type" : "input",
+              "name" : "email",
+              "position" : "2,1",
+              "size" : "10,2",
+              "prompt" : "Email Address",
+              "events" : {
+                "up" : [
+                  { "goto" : "sign up next" }
+                ],
+                "down" : [
+                  { "goto" : "password" }
+                ]
+              }
+            },
+            {
+              "type" : "text",
+              "position" : "2,3",
+              "size" : "10,1",
+              "font" : {
+                "font_size" : "10",
+                "color" : "#cccccc"
+              },
+              "body" : "This is your username and can't be changed."
+            },
+            {
+              "type" : "input",
+              "name" : "password",
+              "position" : "2,4",
+              "size" : "10,2",
+              "prompt" : "Password",
+              "events" : {
+                "up" : [
+                  { "goto" : "email" }
+                ],
+                "down" : [
+                  { "goto" : "zip code" }
+                ]
+              }
+            },
+            {
+              "type" : "text",
+              "position" : "2,6",
+              "size" : "10,1",
+              "font" : {
+                "font_size" : "10",
+                "color" : "#cccccc"
+              },
+              "body" : "Must be at least 4 characters."
+            },
+            {
+              "type" : "input",
+              "name" : "zip code",
+              "position" : "2,7",
+              "size" : "10,2",
+              "prompt" : "Zip Code",
+              "events" : {
+                "up" : [
+                  { "goto" : "password" }
+                ],
+                "down" : [
+                  { "goto" : "sign up next" }
+                ]
+              }
+            },
+            {
+              "type" : "text",
+              "position" : "2,9",
+              "size" : "10,1",
+              "font" : {
+                "font_size" : "10",
+                "color" : "#cccccc"
+              },
+              "body" : "We will use your zip code to set up your account with channels in your area."
+            }
+          ]
+        },
+        {
+          "type" : "button",
+          "size" : "2,1",
+          "position" : "6,11",
+          "content" : [
+            {
+              "type" : "text",
+              "name" : "sign up next",
+              "body" : "Next",
+              "position" : "1,1",
+              "size" : "12,12",
+              "font" : {
+                "font_size" : "24",
+                "alignment" : "center"
+              }
+            }
+          ],
+          "states" : {
+            "on" : {
+              "bgcolor" : "blue"
+            },
+            "off" : {
+              "bgcolor" : "black"
+            }
+          },
+          "events" : {
+            "select" : [
+              { "navigate" : "main" }
+            ],
+            "default_actions" : [
+              { "turn_on" : "disclaimer body" },
+              { "turn_off" : "disclaimer exit" },
+              { "goto" : "disclaimer body" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type" : "page",
+      "name" : "terms of offer page",
+      "content" : [
+        {
+          "type" : "text",
+          "name" : "terms of offer title",
+          "position" : "6,1",
+          "size" : "2,1",
+          "font" : {
+            "font_size" : "24"
+          },
+          "body" : "Terms of Offer"
+        },
+        {
+          "type": "text",
+          "name": "terms of offer body",
+          "position" : "2,2",
+          "size" : "10,10",
+          "is_scrollable" : "true",
+          "font" : {
+            "alignment" : "left"
+          },
+          "events" : {
+            "default_actions" : [
+              { "toggle_on" : "terms of offer exit" },
+              { "toggle_off" : "terms of offer body" },
+              { "goto" : "terms of offer exit" }
+            ]
+          },
+          "body" : "<p>Lorem ipsum dolor sit amet, nec nec maecenas tempus mauris, semper feugiat ac felis sit. Condimentum curabitur est urna, mauris lorem dolor, quis elementum ac dui vitae quis suspendisse. Eu purus maecenas tortor mauris, neque consectetuer mattis, wisi ante laboris non ipsum tincidunt, porta odio amet. Adipiscing donec aliquam mi vel, fusce pulvinar et ultricies, curabitur dictum in. Lacus integer. Sit venenatis ut tempus sollicitudin tempor dui, nunc culpa wisi magnis urna faucibus lectus. Neque sem ultrices velit donec ac euismod, urna donec nunc amet. Lacus vel donec diam integer felis, vel aliquet risus neque, purus placerat justo placerat mauris facilisi nunc. Sollicitudin porttitor in cras etiam. Vulputate vitae eget enim. Neque enim enim.</p><p>Justo magna mus. Sit condimentum, fusce sociosqu gravida est porta urna massa. Ut luctus id proin lectus fermentum, sed aliquam risus suspendisse diam suspendisse arcu, velit phasellus at elit. Fermentum vel. Turpis mattis, elementum gravida vel at urna. Pretium mauris tincidunt adipiscing nec aliquam. Neque nisl mollis euismod, porttitor vel mauris, aliquet pede iaculis at et, illo mollis, tortor faucibus.</p><p>Fringilla duis quisque amet mi vehicula leo, fringilla scelerisque lobortis est, quam facilisi faucibus a orci. Sed pellentesque vestibulum pede arcu condimentum. Morbi maecenas. Quis vestibulum curabitur sed nonummy erat, sed gravida facilisis, libero etiam, est integer elementum erat amet aenean, nibh condimentum lacus. Sit quam quam ligula lorem sed, odio suspendisse accumsan nec, augue vitae pede mauris justo ut, eu aliquam. Donec libero.</p><p>Fugiat semper urna sit eget viverra quis, aliquet vulputate interdum condimentum sit, torquent placerat fringilla vehicula, et porttitor hac porttitor placerat elit erat. Arcu vehicula nam non magna, est quam vitae eu, dolor volutpat, ac purus at dapibus. Donec quis metus justo vel, ipsum nec. Mauris id senectus voluptatem duis, nulla duis, euismod ipsum nullam nec convallis magna morbi. Erat in, justo turpis natoque, pretium etiam vitae in ac, porta potenti neque orci parturient mus, nonummy ipsum amet. Rutrum consequat blandit id id, sed fringilla sapien odio wisi. Nec dolor vulputate integer arcu et luctus, vitae scelerisque et enim aliquam nam eros. Neque in cras, bibendum commodo. Ligula diam aliquam, mus nam faucibus lorem dui, in sed at nunc lorem. Scelerisque quis aliquam nunc, tincidunt vivamus sem neque lectus mi, augue aenean massa a lobortis. Magna fringilla morbi nulla ut eros eros, sem a, purus est elementum non quisque, volutpat nulla venenatis velit, nonummy integer nunc.</p>"
+        },
+        {
+          "type" : "button",
+          "position" : "1,12",
+          "size" : "1,1",
+          "content" : [
+            {
+              "type" : "text",
+              "name" : "terms of offer exit",
+              "font" : {
+                "font_size" : "24",
+                "alignment" : "center"
+              },
+              "body" : "Exit",
+              "position" : "1,1",
+              "size" : "12,12"
+            }
+          ],
+          "states" : {
+            "on" : {
+              "bgcolor" : "blue"
+            },
+            "off" : {
+              "bgcolor" : "black"
+            }
+          },
+          "events" : {
+            "select" : [
+              { "navigate" : "sign up page" }
+            ],
+            "default_actions" : [
+              { "turn_on" : "terms of offer body" },
+              { "turn_off" : "terms of offer exit" },
+              { "goto" : "terms of offer body" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type" : "page",
+      "name" : "privacy policy page",
+      "content" : [
+        {
+          "type" : "text",
+          "name" : "privacy policy title",
+          "position" : "6,1",
+          "size" : "2,1",
+          "font" : {
+            "font_size" : "24"
+          },
+          "body" : "Privacy Policy"
+        },
+        {
+          "type": "text",
+          "name": "privacy policy body",
+          "position" : "2,2",
+          "size" : "10,10",
+          "is_scrollable" : "true",
+          "font" : {
+            "alignment" : "left"
+          },
+          "events" : {
+            "default_actions" : [
+              { "toggle_on" : "privacy policy exit" },
+              { "toggle_off" : "privacy policy body" },
+              { "goto" : "privacy policy exit" }
+            ]
+          },
+          "body" : "<p>Lorem ipsum dolor sit amet, nec nec maecenas tempus mauris, semper feugiat ac felis sit. Condimentum curabitur est urna, mauris lorem dolor, quis elementum ac dui vitae quis suspendisse. Eu purus maecenas tortor mauris, neque consectetuer mattis, wisi ante laboris non ipsum tincidunt, porta odio amet. Adipiscing donec aliquam mi vel, fusce pulvinar et ultricies, curabitur dictum in. Lacus integer. Sit venenatis ut tempus sollicitudin tempor dui, nunc culpa wisi magnis urna faucibus lectus. Neque sem ultrices velit donec ac euismod, urna donec nunc amet. Lacus vel donec diam integer felis, vel aliquet risus neque, purus placerat justo placerat mauris facilisi nunc. Sollicitudin porttitor in cras etiam. Vulputate vitae eget enim. Neque enim enim.</p><p>Justo magna mus. Sit condimentum, fusce sociosqu gravida est porta urna massa. Ut luctus id proin lectus fermentum, sed aliquam risus suspendisse diam suspendisse arcu, velit phasellus at elit. Fermentum vel. Turpis mattis, elementum gravida vel at urna. Pretium mauris tincidunt adipiscing nec aliquam. Neque nisl mollis euismod, porttitor vel mauris, aliquet pede iaculis at et, illo mollis, tortor faucibus.</p><p>Fringilla duis quisque amet mi vehicula leo, fringilla scelerisque lobortis est, quam facilisi faucibus a orci. Sed pellentesque vestibulum pede arcu condimentum. Morbi maecenas. Quis vestibulum curabitur sed nonummy erat, sed gravida facilisis, libero etiam, est integer elementum erat amet aenean, nibh condimentum lacus. Sit quam quam ligula lorem sed, odio suspendisse accumsan nec, augue vitae pede mauris justo ut, eu aliquam. Donec libero.</p><p>Fugiat semper urna sit eget viverra quis, aliquet vulputate interdum condimentum sit, torquent placerat fringilla vehicula, et porttitor hac porttitor placerat elit erat. Arcu vehicula nam non magna, est quam vitae eu, dolor volutpat, ac purus at dapibus. Donec quis metus justo vel, ipsum nec. Mauris id senectus voluptatem duis, nulla duis, euismod ipsum nullam nec convallis magna morbi. Erat in, justo turpis natoque, pretium etiam vitae in ac, porta potenti neque orci parturient mus, nonummy ipsum amet. Rutrum consequat blandit id id, sed fringilla sapien odio wisi. Nec dolor vulputate integer arcu et luctus, vitae scelerisque et enim aliquam nam eros. Neque in cras, bibendum commodo. Ligula diam aliquam, mus nam faucibus lorem dui, in sed at nunc lorem. Scelerisque quis aliquam nunc, tincidunt vivamus sem neque lectus mi, augue aenean massa a lobortis. Magna fringilla morbi nulla ut eros eros, sem a, purus est elementum non quisque, volutpat nulla venenatis velit, nonummy integer nunc.</p>"
+        },
+        {
+          "type" : "button",
+          "position" : "1,12",
+          "size" : "1,1",
+          "content" : [
+            {
+              "type" : "text",
+              "name" : "privacy policy exit",
+              "body" : "Exit",
+              "font" : {
+                "font_size" : "24",
+                "alignment" : "center"
+              },
+              "position" : "1,1",
+              "size" : "12,12"
+            }
+          ],
+          "states" : {
+            "on" : {
+              "bgcolor" : "blue"
+            },
+            "off" : {
+              "bgcolor" : "black"
+            }
+          },
+          "events" : {
+            "select" : [
+              { "navigate" : "sign up page" }
+            ],
+            "default_actions" : [
+              { "turn_on" : "privacy policy body" },
+              { "turn_off" : "privacy policy exit" },
+              { "goto" : "privacy policy body" }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

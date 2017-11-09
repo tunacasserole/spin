@@ -1,0 +1,55 @@
+<div class="row quick-stats">
+
+  <%= link_to albums_path do %>
+  <div class="col-sm-6 col-md-3">
+    <div class="quick-stats__item bg-red">
+      <div class="quick-stats__info">
+        <h2><%= number_with_delimiter( Album.count , :delimiter => ',')%></h2>
+        <small>Total Albums</small>
+      </div>
+
+      <div class="quick-stats__chart sparkline-bar-stats">6,4,8,6,5,6,7,8,3,5,9,5</div>
+    </div>
+  <% end %>
+  </div>
+
+  <%= link_to artists_path do %>
+  <div class="col-sm-6 col-md-3">
+    <div class="quick-stats__item bg-green">
+      <div class="quick-stats__info">
+        <h2><%= number_with_delimiter( Artist.count , :delimiter => ',')%></h2>
+        <small>Total Artists</small>
+      </div>
+
+      <div class="quick-stats__chart sparkline-bar-stats">4,7,6,2,5,3,8,6,6,4,8,6</div>
+    </div>
+  <% end %>
+  </div>
+
+  <%= link_to albums_path do %>
+  <div class="col-sm-6 col-md-3">
+    <div class="quick-stats__item bg-purple">
+      <div class="quick-stats__info">
+        <h2><%= number_with_delimiter( Album.count * 8 , :delimiter => ',')%></h2>
+        <small>Total Songs</small>
+      </div>
+
+      <div class="quick-stats__chart sparkline-bar-stats">9,4,6,5,6,4,5,7,9,3,6,5</div>
+    </div>
+  <% end %>
+  </div>
+
+  <%= link_to albums_path do %>
+  <div class="col-sm-6 col-md-3">
+    <div class="quick-stats__item bg-blue">
+      <div class="quick-stats__info">
+        <h2>48</h2>
+        <small>Years Covered</small>
+      </div>
+
+      <div class="quick-stats__chart sparkline-bar-stats">5,6,3,9,7,5,4,6,5,6,4,9</div>
+    </div>
+  <% end %>
+  </div>
+
+</div>

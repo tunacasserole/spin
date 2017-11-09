@@ -1,0 +1,21 @@
+  /*
+ *= require dist/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min
+ *= require dist/vendors/bower_components/animate.css/animate.min
+ *= require dist/vendors/bower_components/jquery.scrollbar/jquery.scrollbar
+ *= require dist/vendors/bower_components/fullcalendar/dist/fullcalendar.min
+ *= require dist/vendors/bower_components/select2/dist/css/select2.min
+ *= require dist/vendors/bower_components/dropzone/dist/dropzone
+ *= require dist/vendors/bower_components/flatpickr/dist/flatpickr.min
+ *= require dist/vendors/bower_components/nouislider/distribute/nouislider.min
+ *= require dist/vendors/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min
+ *= require dist/vendors/bower_components/trumbowyg/dist/ui/trumbowyg.min
+ *
+ *= require dist/css/app.min
+ *
+ *= require dist/demo/css/demo
+ * require vendors/jquery.bootgrid.min
+ *= require font-awesome
+ *=
+ *= require_tree .
+ *= require_self
+ */

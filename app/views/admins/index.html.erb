@@ -1,0 +1,49 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<section id="content">
+  <div class="container">
+
+    <div class="card">
+      <div class="card-header ch-alt m-b-20">
+        <h2>Administrators</h2>
+          <small>Create, modify and grant privileges to hub system administrators.</small>
+        <%#= render partial: 'core/actions' %>
+
+        <a href="<%= new_admin_path %>" class="btn bgm-orange btn-float waves-effect"><i class="zmdi zmdi-plus"></i>
+        </a>
+      </div>
+
+      <div class="table-responsive">
+        <table id="grid-admins" class="table">
+          <thead>
+            <tr>
+              <th data-column-id="id" data-type="numeric" data-identifier="true">ID</th>
+              <th data-column-id="first_name" data-order="asc" >First Name</th>
+              <th data-column-id="last_name">Last Name</th>
+              <th data-column-id="email">Email Address</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<%= content_for :body_end do %>
+<%= init_grid(
+              "grid-admins",
+              url: "/admins.json",
+              primaryKey: "id",
+              formatters: {
+
+              },
+              handlers: {
+                click: { fn: :inspect, url: "/admins", identifier: 'id' }
+              }
+              ) %>
+              <% end %>

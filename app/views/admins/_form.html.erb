@@ -1,0 +1,91 @@
+<%= form_for resource, html: {id: "form-admin"} do |f| %>
+<div class="card-body card-padding">
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <div class="fg-line">
+          <label class="">Email Address</label>
+          <%= f.text_field :email, class: "form-control", placeholder: "e.g. peter.pan@neverland.com" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <div class="fg-line">
+          <label class="">First Name</label>
+          <%= f.text_field :first_name, class: "form-control", placeholder: "e.g. Peter" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <div class="fg-line">
+          <label class="">Last Name</label>
+          <%= f.text_field :last_name, class: "form-control", placeholder: "e.g. Pan" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% unless resource.new_record? %>
+  <br>
+  <h4>Change your password</h4>
+  <br>
+  <% end %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <div class="fg-line">
+          <%= f.label "Password", class: "" %>
+          <input type="password" class="form-control input-lg" required placeholder="your secret password" id="admin_password" name="admin[password]">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <div class="fg-line">
+          <%= f.label "Confirm new password", class: "" %>
+          <input type="password" class="form-control input-lg" required placeholder="confirm password" id="admin_password_confirmation" name="admin[password_confirmation]">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= link_to (resource.new_record? ? 'Create' : 'Update'), "#", class: "btn btn-primary m-t-10 m-r-5 waves-effect", onclick: "$('#form-admin').submit()" %>
+
+</div>
+
+<% end %>
+
+<% unless resource.new_record? %>
+<div class="card-body card-padding">
+
+  <div class="row">
+    <div class="col-md-9">
+      <div class="form-group">
+        <div class="fg-line">
+
+          <br>
+          <h4>Delete Account</h4>
+          <br>
+          <p>Once you delete your account, there is no going back. Please be certain.</p>
+
+          <%= link_to 'Delete your account', "/admins/#{}", data: {confirm: 'Destroy this administrator?'}, class: "btn btn-danger m-t-10 m-r-5 waves-effect", method: :delete %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% end %>

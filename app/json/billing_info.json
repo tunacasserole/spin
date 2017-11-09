@@ -1,0 +1,350 @@
+{
+  "start_page" : "billing messages",
+  "page_size" : "1024px,720px",
+  "font" : {
+    "family" : "arial",
+    "font_size" : "10",
+    "color" : "#cccccc",
+    "alignment" : "left"
+  },
+  "bgcolor" : "#000000",
+  "pages" : [
+    {
+      "type" : "page",
+      "name" : "billing messages",
+      "events" : [
+        { "select" : [ { "goto" : "billing first name" } ] }
+      ],
+      "content" : [
+        {
+          "type" : "text",
+          "name" : "billing title",
+          "alignment" : "center",
+          "position" : "5,1",
+          "size" : "4,1",
+          "font" : {
+            "font_size" : "20",
+            "color" : "#ffffff",
+            "alignment" : "center"
+          },
+          "body" : "Enter Payment Details"
+        },
+        {
+          "type" : "container",
+          "position" : "4,2",
+          "size" : "6,2",
+          "content" : [
+            {
+              "type" : "image",
+              "position" : "1,1",
+              "size" : "2,2",
+              "url" : "http://logodomain.com/check_mark.png"
+            },
+            {
+              "type" : "text",
+              "position" : "3,1",
+              "size" : "10,3",
+              "body" : [
+                {
+                  "type" : "phrase",
+                  "phrase" : "You will not be charged until your free trial ends on"
+                },
+                {
+                  "type" : "value",
+                  "data" : "free trial end date"
+                }
+              ]
+            },
+            {
+              "type" : "image",
+              "position" : "1,5",
+              "size" : "2,2",
+              "url" : "http://logodomain.com/check_mark.png"
+            },
+            {
+              "type" : "text",
+              "position" : "3,5",
+              "size" : "10,3",
+              "body" : "No long-term commitment, easy online cancellation"
+            },
+            {
+              "type" : "image",
+              "position" : "1,9",
+              "size" : "2,2",
+              "url" : "http://logodomain.com/check_mark.png"
+            },
+            {
+              "type" : "text",
+              "position" : "3,9",
+              "size" : "10,3",
+              "body" : [
+                {
+                  "type" : "phrase",
+                  "phrase" : "Watch "
+                },
+                {
+                  "type" : "value",
+                  "data" : "channel count"
+                },
+                {
+                  "type" : "phrase",
+                  "phrase" : "+ channels with "
+                },
+                {
+                  "type" : "value",
+                  "data" : "base package"
+                },
+                {
+                  "type" : "phrase",
+                  "phrase" : " and the "
+                },
+                {
+                  "type" : "value",
+                  "data" : "extra channels"
+                },
+                {
+                  "type" : "phrase",
+                  "phrase" : " $"
+                },
+                {
+                  "type" : "value",
+                  "data" : "monthly fee"
+                },
+                {
+                  "type" : "phrase",
+                  "phrase" : "/mo+tax after your free period."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "container",
+          "position": "4,4",
+          "size": "5,7",
+          "content": [
+            {
+              "type": "container",
+              "position" : "1,1",
+              "size" : "6,12",
+              "content": [
+                {
+                  "type" : "input",
+                  "name" : "billing first name",
+                  "position" : "1,1",
+                  "size" : "11,2",
+                  "prompt" : "First Name",
+                  "events" : {
+                    "up" : [ { "goto" : "billing submit" } ],
+                    "left" : [ { "goto" : "billing submit" } ],
+                    "right" : [ { "goto" : "billing last name" } ],
+                    "down" : [ { "goto" : "billing card number" } ],
+                    "unfocus" : [
+                      { "store" : { "billing first name" : "<ignored>" } }
+                    ]
+                  }
+                },
+                {
+                  "type" : "text",
+                  "position" : "1,3",
+                  "size" : "11,1",
+                  "body" : "Enter your first name"
+                },
+                {
+                  "type" : "input",
+                  "name" : "billing card number",
+                  "position" : "1,5",
+                  "size" : "11,2",
+                  "prompt" : "Card Number",
+                  "events" : {
+                    "up" : [ { "goto" : "billing first name" } ],
+                    "left" : [ { "goto" : "billing last name" } ],
+                    "right" : [ { "goto" : "billing exp month" } ],
+                    "down" : [ { "goto" : "billing ccv" } ],
+                    "unfocus" : [
+                      { "store" : { "billing card number" : "<ignored>" } }
+                    ]
+                  }
+                },
+                {
+                  "type" : "text",
+                  "position" : "1,7",
+                  "size" : "11,1",
+                  "body" : "Your credit card length must be at least 12 digits"
+                },
+                {
+                  "type" : "input",
+                  "name" : "billing ccv",
+                  "position" : "1,9",
+                  "size" : "5,2",
+                  "prompt" : "CCV",
+                  "events" : {
+                    "up" : [ { "goto" : "billing card number" } ],
+                    "left" : [ { "goto" : "billing exp year" } ],
+                    "right" : [ { "goto" : "billing zip code" } ],
+                    "down" : [ { "goto" : "billing submit" } ],
+                    "unfocus" : [
+                      { "store" : { "billing ccv" : "<ignored>" } }
+                    ]
+                  }
+                },
+                {
+                  "type" : "image",
+                  "name" : "ccv location",
+                  "position" : "6,9",
+                  "size" : "3,2",
+                  "url" : "http://logodomain.com/ccv_location.png"
+                },
+                {
+                  "type" : "text",
+                  "position" : "1,11",
+                  "size" : "11,1",
+                  "body" : "Enter your security code"
+                }
+              ]
+            },
+            {
+              "type": "container",
+              "position" : "7,1",
+              "size" : "6,12",
+              "content": [
+                {
+                  "type" : "input",
+                  "name" : "billing last name",
+                  "position" : "1,1",
+                  "size" : "11,2",
+                  "prompt" : "Last Name",
+                  "events" : {
+                    "up" : [ { "goto" : "billing submit" } ],
+                    "left" : [ { "goto" : "billing first name" } ],
+                    "right" : [ { "goto" : "billing card number" } ],
+                    "down" : [ { "goto" : "billing exp month" } ],
+                    "unfocus" : [
+                      { "store" : { "billing last name" : "<ignored>" } }
+                    ]
+                  }
+                },
+                {
+                  "type" : "text",
+                  "position" : "1,3",
+                  "size" : "11,1",
+                  "body" : "Enter your last name"
+                },
+                {
+                  "type" : "input",
+                  "name" : "billing exp month",
+                  "position" : "1,9",
+                  "size" : "5,2",
+                  "prompt" : "Exp Month",
+                  "events" : {
+                    "up" : [ { "goto" : "billing last name" } ],
+                    "left" : [ { "goto" : "billing card number" } ],
+                    "right" : [ { "goto" : "billing exp year" } ],
+                    "down" : [ { "goto" : "billing zip code" } ],
+                    "unfocus" : [
+                      { "store" : { "billing exp month" : "<ignored>" } }
+                    ]
+                  }
+                },
+                {
+                  "type" : "text",
+                  "position" : "1,5",
+                  "size" : "5,1",
+                  "body" : "Enter card expiration month"
+                },
+                {
+                  "type" : "input",
+                  "name" : "billing exp year",
+                  "position" : "7,9",
+                  "size" : "5,2",
+                  "prompt" : "Exp Year",
+                  "events" : {
+                    "up" : [ { "goto" : "billing last name" } ],
+                    "left" : [ { "goto" : "billing exp month" } ],
+                    "right" : [ { "goto" : "billing ccv" } ],
+                    "down" : [ { "goto" : "billing zip code" } ],
+                    "unfocus" : [
+                      { "store" : { "billing exp year" : "<ignored>" } }
+                    ]
+                  }
+                },
+                {
+                  "type" : "text",
+                  "position" : "6,5",
+                  "size" : "5,1",
+                  "body" : "Enter card expiration year"
+                },
+                {
+                  "type" : "input",
+                  "name" : "billing zip code",
+                  "position" : "1,9",
+                  "size" : "5,2",
+                  "prompt" : "Zip Code",
+                  "events" : {
+                    "up" : [ { "goto" : "billing exp month" } ],
+                    "left" : [ { "goto" : "billing ccv" } ],
+                    "right" : [ { "goto" : "billing submit" } ],
+                    "down" : [ { "goto" : "billing submit" } ],
+                    "unfocus" : [
+                      { "store" : { "billing zip code" : "<ignored>" } }
+                    ]
+                  }
+                },
+                {
+                  "type" : "text",
+                  "position" : "1,11",
+                  "size" : "5,1",
+                  "body" : "Enter your billing zip code"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type" : "text",
+          "position" : "5,11",
+          "size" : "5,1",
+          "font" : {
+            "font_size" : "8",
+            "alignment" : "center"
+          },
+          "body" : "After the free trial, your account will be charged the amount listed above, each month, unless you cancel prior to the end of the free trial.  Your subscription will continue until you cancel.  You can cancel by going to \"Your Account\" and clicking on \"Cancel Subscription.\"  Programming fees are charged monthly in advance and no credits or refunds will be issued for partial months after cancellation.  One free trial per customer."
+        },
+        {
+          "type" : "button",
+          "name" : "billing submit",
+          "position" : "6,12",
+          "size" : "2,1",
+          "content" : [
+            {
+              "type" : "text",
+              "position" : "1,1",
+              "size" : "12,12",
+              "font" : {
+                "alignment" : "center",
+                "font_size" : "20",
+                "color" : "#ffffff"
+              },
+              "body" : "Finish & Submit"
+            }
+          ],
+          "events" : {
+            "up" : [ { "goto" : "billing zip code" } ],
+            "down" : [ { "goto" : "billing first name" } ],
+            "left" : [ { "goto" : "billing zip code" } ],
+            "right" : [ { "goto" : "billing first name" } ],
+            "select" : [ { "submit" : "billing submit" } ]
+          },
+          "states" : {
+            "off" : {
+              "bgcolor" : "#000000"
+            },
+            "on" : {
+              "bgcolor" : "#0000ff"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

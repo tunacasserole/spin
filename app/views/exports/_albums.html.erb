@@ -1,0 +1,18 @@
+<div id="album-front" class="card">
+  <div class="card-header bgm-black">
+    <h2>Export Albums</h2>
+    <br>
+    <small>Dump all of the albums in your collection into a csv file.
+    </small>
+    <br>
+    <br>
+    <br>
+    <%= link_to 'export_albums', :controller => "tools", :action => "export_albums",  method: 'post', remote: 'true' do |cc| %>
+    <button class="btn btn-primary btn-icon-text waves-effect ma-trigger pull-left ">
+      <i class="fa fa-gears"></i>
+      &nbsp EXPORT COLLECTION
+    </button>
+    <% end %>
+
+  </div>
+</div>

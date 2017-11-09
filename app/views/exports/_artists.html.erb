@@ -1,0 +1,18 @@
+<div id="album-front" class="card">
+  <div class="card-header bgm-black">
+    <h2>Export Artists</h2>
+    <br>
+    <small>Dump all of the artists in your collection into a csv file.
+    </small>
+    <br>
+    <br>
+    <br>
+    <%= link_to 'export_artists', :controller => "artists", :action => "export_artists",  method: 'put', remote: 'true' do |cc| %>
+    <button class="btn btn-primary btn-icon-text waves-effect ma-trigger pull-left ">
+      <i class="fa fa-gears"></i>
+      &nbsp EXPORT ARTISTS
+    </button>
+    <% end %>
+
+  </div>
+</div>

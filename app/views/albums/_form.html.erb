@@ -1,0 +1,24 @@
+
+<%= form_with model: resource, url: ( resource.new_record? ? "/albums" : "/albums/#{resource.id}" ), method: ( resource.new_record? ? :post  : :put ), html: { id: 'album-form' }, :builder => Spin::Ui::FormBuilder  do |f| %>
+
+<%= f.text_field :name%>
+
+<%= f.label 'Artist' %>
+<br>
+<%= f.select :artist_id, Artist.all.collect { |a| [a.name, a.id] }, include_blank: true, class: "form-control select-picker" %>
+<br>
+<br>
+
+<%= f.label 'Year' %>
+<br>
+<%= f.select :year, [*(1900..2017)] %>
+<br>
+<br>
+
+<%= f.label 'Condition' %>
+<br>
+<%= f.select :condition, Album::CONDITIONS %>
+<br>
+<br>
+
+<% end %>

@@ -1,0 +1,86 @@
+{
+  "start_page" : "terms of offer page",
+  "page_size" : "1024px,720px",
+  "font" : {
+    "family" : "arial",
+    "font_size" : "16",
+    "color" : "#ffffff",
+    "alignment" : "center"
+  },
+  "bgcolor" : "#000000",
+  "pages" : [
+    {
+      "type" : "page",
+      "name" : "terms of offer page",
+      "events" : [
+        { "select" : [ { "goto" : "terms of offer body" } ] }
+      ],
+      "content" : [
+        {
+          "type" : "text",
+          "name" : "terms of offer title",
+          "position" : "6,1",
+          "size" : "2,1",
+          "font" : {
+            "font_size" : "24"
+          },
+          "body" : "Terms of Offer"
+        },
+        {
+          "type": "text",
+          "name": "terms of offer body",
+          "position" : "2,2",
+          "size" : "10,10",
+          "is_scrollable" : true,
+          "font" : {
+            "alignment" : "left"
+          },
+          "events" : {
+            "default_actions" : [
+              { "toggle_on" : "terms of offer exit" },
+              { "toggle_off" : "terms of offer body" },
+              { "goto" : "terms of offer exit" }
+            ]
+          },
+          "body" : "<p>Lorem ipsum dolor sit amet, nec nec maecenas tempus mauris, semper feugiat ac felis sit. Condimentum curabitur est urna, mauris lorem dolor, quis elementum ac dui vitae quis suspendisse. Eu purus maecenas tortor mauris, neque consectetuer mattis, wisi ante laboris non ipsum tincidunt, porta odio amet. Adipiscing donec aliquam mi vel, fusce pulvinar et ultricies, curabitur dictum in. Lacus integer. Sit venenatis ut tempus sollicitudin tempor dui, nunc culpa wisi magnis urna faucibus lectus. Neque sem ultrices velit donec ac euismod, urna donec nunc amet. Lacus vel donec diam integer felis, vel aliquet risus neque, purus placerat justo placerat mauris facilisi nunc. Sollicitudin porttitor in cras etiam. Vulputate vitae eget enim. Neque enim enim.</p><p>Justo magna mus. Sit condimentum, fusce sociosqu gravida est porta urna massa. Ut luctus id proin lectus fermentum, sed aliquam risus suspendisse diam suspendisse arcu, velit phasellus at elit. Fermentum vel. Turpis mattis, elementum gravida vel at urna. Pretium mauris tincidunt adipiscing nec aliquam. Neque nisl mollis euismod, porttitor vel mauris, aliquet pede iaculis at et, illo mollis, tortor faucibus.</p><p>Fringilla duis quisque amet mi vehicula leo, fringilla scelerisque lobortis est, quam facilisi faucibus a orci. Sed pellentesque vestibulum pede arcu condimentum. Morbi maecenas. Quis vestibulum curabitur sed nonummy erat, sed gravida facilisis, libero etiam, est integer elementum erat amet aenean, nibh condimentum lacus. Sit quam quam ligula lorem sed, odio suspendisse accumsan nec, augue vitae pede mauris justo ut, eu aliquam. Donec libero.</p><p>Fugiat semper urna sit eget viverra quis, aliquet vulputate interdum condimentum sit, torquent placerat fringilla vehicula, et porttitor hac porttitor placerat elit erat. Arcu vehicula nam non magna, est quam vitae eu, dolor volutpat, ac purus at dapibus. Donec quis metus justo vel, ipsum nec. Mauris id senectus voluptatem duis, nulla duis, euismod ipsum nullam nec convallis magna morbi. Erat in, justo turpis natoque, pretium etiam vitae in ac, porta potenti neque orci parturient mus, nonummy ipsum amet. Rutrum consequat blandit id id, sed fringilla sapien odio wisi. Nec dolor vulputate integer arcu et luctus, vitae scelerisque et enim aliquam nam eros. Neque in cras, bibendum commodo. Ligula diam aliquam, mus nam faucibus lorem dui, in sed at nunc lorem. Scelerisque quis aliquam nunc, tincidunt vivamus sem neque lectus mi, augue aenean massa a lobortis. Magna fringilla morbi nulla ut eros eros, sem a, purus est elementum non quisque, volutpat nulla venenatis velit, nonummy integer nunc.</p>"
+        },
+        {
+          "type" : "button",
+          "position" : "12,1",
+          "size" : "1,1",
+          "content" : [
+            {
+              "type" : "text",
+              "name" : "terms of offer exit",
+              "font" : {
+                "font_size" : "24",
+                "alignment" : "center"
+              },
+              "body" : "Exit",
+              "position" : "1,1",
+              "size" : "12,12"
+            }
+          ],
+          "states" : {
+            "on" : {
+              "bgcolor" : "#0000ff"
+            },
+            "off" : {
+              "bgcolor" : "#000000"
+            }
+          },
+          "events" : {
+            "select" : [
+              { "navigate" : "sign up page" }
+            ],
+            "default_actions" : [
+              { "turn_on" : "terms of offer body" },
+              { "turn_off" : "terms of offer exit" },
+              { "goto" : "terms of offer body" }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

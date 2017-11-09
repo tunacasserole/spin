@@ -1,0 +1,118 @@
+  <div class="login">
+
+    <!-- Login -->
+    <div class="login__block active" id="l-login" style="min-width: 600px">
+
+      <div class="login__block__header">
+        Hi there! Welcome to Spin Studio!  &nbsp Please sign in.
+
+        <div class="actions actions--inverse login__block__actions">
+          <div class="dropdown">
+            <i data-toggle="dropdown" class="zmdi zmdi-more-vert actions__item"></i>
+
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" data-ma-action="login-switch" data-ma-target="#l-register" href="">Verify & create an account</a>
+              <a class="dropdown-item" data-ma-action="login-switch" data-ma-target="#l-forget-password" href="">Forgot password?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <%= image_tag('login_logo1.jpeg') %>
+
+      <div class="login__block__body">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="form-group form-group--float form-group--centered">
+          Login ID
+          <input type="text" class="form-control" id="admin_email" name="admin[email]">
+          <i class="form-group__bar"></i>
+        </div>
+
+        <div class="form-group form-group--float form-group--centered">
+          Password
+          <input type="password" class="form-control" id="admin_password" name="admin[password]">
+          <i class="form-group__bar"></i>
+        </div>
+
+        <%= f.button(type: 'submit', class: 'btn btn--icon login__block__btn') do %>
+        <i class="zmdi zmdi-long-arrow-right"></i>
+        <% end %>
+
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Register -->
+    <div class="login__block" id="l-register" style="min-width: 600px">
+      <div class="login__block__header palette-Blue bg">
+        <i class="zmdi zmdi-account-circle"></i>
+        Verify and Create an account.
+
+        <div class="actions actions--inverse login__block__actions">
+          <div class="dropdown">
+            <i data-toggle="dropdown" class="zmdi zmdi-more-vert actions__item"></i>
+
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" data-ma-action="login-switch" data-ma-target="#l-login" href="">Already have an account?</a>
+              <a class="dropdown-item" data-ma-action="login-switch" data-ma-target="#l-forget-password" href="">Forgot password?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <h7> To verify and create your Spin account please provide the following: </h7>
+      <br>
+      <br>
+
+
+      <div class="login__block__body">
+
+        <div class="form-group form-group--float form-group--centered">
+          <input type="text" class="form-control">
+          <label>Name</label>
+          <i class="form-group__bar"></i>
+        </div>
+
+        <div class="form-group form-group--float form-group--centered">
+          <input type="email" class="form-control">
+          <label>Email</label>
+          <i class="form-group__bar"></i>
+        </div>
+
+        <a href="index.html" class="btn btn--icon login__block__btn"><i class="zmdi zmdi-long-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- Forgot Password -->
+    <div class="login__block" id="l-forget-password">
+      <div class="login__block__header palette-Purple bg">
+        <i class="zmdi zmdi-account-circle"></i>
+        Request password reset
+
+        <div class="actions actions--inverse login__block__actions">
+          <div class="dropdown">
+            <i data-toggle="dropdown" class="zmdi zmdi-more-vert actions__item"></i>
+
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" data-ma-action="login-switch" data-ma-target="#l-login" href="">Already have an account?</a>
+              <a class="dropdown-item" data-ma-action="login-switch" data-ma-target="#l-register" href="">Create an account</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="form-group form-group--float form-group--centered">
+          <input type="email" class="form-control">
+          <label>Email</label>
+          <i class="form-group__bar"></i>
+        </div>
+
+        <a href="index.html" class="btn btn--icon login__block__btn"><i class="zmdi zmdi-long-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+</body>

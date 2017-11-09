@@ -1,0 +1,4 @@
+module Spin::Globals
+
+
+end

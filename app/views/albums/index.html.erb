@@ -1,0 +1,76 @@
+<section class="content">
+    <div class="content__inner">
+        <header class="content__title">
+            <h1>Your Music Collection</h1>
+
+            <div class="actions">
+                <a href="" class="actions__item zmdi zmdi-trending-up"></a>
+                <a href="" class="actions__item zmdi zmdi-check-all"></a>
+
+                <div class="dropdown actions__item">
+                    <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="" class="dropdown-item">Refresh</a>
+                        <a href="" class="dropdown-item">Manage Widgets</a>
+                        <a href="" class="dropdown-item">Settings</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="text-right">
+            <%= render partial: 'albums/modal', locals: { resource: Album.new } %>
+        </div>
+
+        <br>
+        <div class="toolbar">
+            <nav class="toolbar__nav">
+                <a class="active" href="">All</a>
+                <a href="">Favorites</a>
+            </nav>
+
+            <div class="actions">
+                <i class="actions__item zmdi zmdi-search" data-ma-action="toolbar-search-open"></i>
+                <a href="" class="actions__item zmdi zmdi-info-outline hidden-xs-down"></a>
+
+                <div class="dropdown actions__item hidden-xs-down">
+                    <i class="zmdi zmdi-more-vert" data-toggle="dropdown"></i>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="" class="dropdown-item">Refresh</a>
+                        <a href="" class="dropdown-item">Delete</a>
+                        <a href="" class="dropdown-item">Settings</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="toolbar__search">
+                <input type="text" placeholder="Search...">
+
+                <i class="toolbar__search__close zmdi zmdi-long-arrow-left" data-ma-action="toolbar-search-close"></i>
+            </div>
+        </div>
+
+        <div class="contacts row">
+
+            <% @albums.each_with_index do |a,i| %>
+
+            <div class="col-xl-2 col-lg-3 col-sm-4 col-6">
+                <a href="" class="contacts__img">
+                    <div class="contacts__item">
+                        <%= image_tag "contacts/#{i+1}.jpg" if i < 16%>
+
+                        <div class="contacts__info">
+                            <strong><%= a.artist.name %></strong>
+                            <small><%= a.name %></small>
+                        </div>
+
+                        <button class="contacts__btn">Favorite</button>
+                    </a>
+                </div>
+            </div>
+            <% end %>
+
+
+        </div>
+    </div>
+
+</section>
