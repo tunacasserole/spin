@@ -5,7 +5,7 @@ gem 'pg'#, '0.3.16'
 gem 'devise'#, git: 'https://github.com/gogovan/devise.git', branch: 'rails-5.1'
 gem 'listen'#, '~> 3.0.5'
 gem 'rack-cors'
-# gem 'csv'
+gem 'unicorn'
 # gem 'active_model_serializers'
 # gem 'ejs'
 ### GENERATED ###
