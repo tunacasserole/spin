@@ -1,14 +1,17 @@
 # README
 
-## CUSTOM
+## Instructions
 In order to run this project, follow the standard rails workflow:
 - git clone
+- ensure ruby version is set to 2.4.0
 - bundle
 - rails db:create; db:migrate; db:seed
-- rails server
+- rails s
 - sign in to localhost:3000
 	- demo@demo.com / welcome
 
+
+## Release Notes
 Release 1.0 (complete)
 - User Mgmt: Authentication, sign in / sign out, forgot password, sign up, edit profile
 - Dashboard: Album & Artist stats cards, albums by year area chart, top artists bar chart
@@ -25,28 +28,4 @@ Release 2.0 (future - present in UI but not yet operational)
 - Playlists
 - Imports
 - Administrator CRUD
-
-
-## GENERATED
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Test Suite
