@@ -4,7 +4,7 @@
 In order to run this project, follow the standard rails workflow:
 - git clone
 - bundle
-- rails db:create; db:migrate, db:seed
+- rails db:create; db:migrate; db:seed
 - rails server
 - sign in to localhost:3000
 	- demo@demo.com / welcome
