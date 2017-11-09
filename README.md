@@ -9,6 +9,23 @@ In order to run this project, follow the standard rails workflow:
 - sign in to localhost:3000
 	- demo@demo.com / welcome
 
+Release 1.0 (complete)
+- User Mgmt: Authentication, sign in / sign out, forgot password, sign up, edit profile
+- Dashboard: Album & Artist stats cards, albums by year area chart, top artists bar chart
+- Albums: List, Search, Add
+- Artists: List by bootgrid, Search
+- Export: Artists
+- Messaging: Growl Notifications
+
+
+Release 2.0 (future - present in UI but not yet operational)
+- Chat
+- Notifications
+- App Switcher
+- Playlists
+- Imports
+- Administrator CRUD
+
 
 ## GENERATED
 This README would normally document whatever steps are necessary to get the
