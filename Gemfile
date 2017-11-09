@@ -7,7 +7,7 @@ gem 'listen'#, '~> 3.0.5'
 gem 'rack-cors'
 gem 'kaminari'
 # gem 'active_model_serializers'
-# gem 'ejs'
+gem 'ejs'
 ### GENERATED ###
 gem 'rails'
 gem 'puma'
