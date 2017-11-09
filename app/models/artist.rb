@@ -1,4 +1,4 @@
-require 'CSV'
+require 'csv'
 
 class Artist < ApplicationRecord
 
@@ -8,9 +8,11 @@ class Artist < ApplicationRecord
 		@artists = Artist.all
 
 		CSV.open("db/exports/artists.csv", "wb") do |csv|
-			csv << Artist.attribute_names
+			csv << ['Artist Name', '# of Records', 'Record Year Range']
 			Artist.all.each do |artist|
-				csv << artist.attributes.values
+				albums = artist.albums.order(:year)
+				range = "#{albums.first.year} - #{albums.last.year}"
+				csv << [artist.name, artist.albums.count, range]
 			end
 		end
 

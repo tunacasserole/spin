@@ -1,15 +1,12 @@
 source 'http://rubygems.org'
 
 ### CUSTOM ###
-gem 'pg'#, '0.3.16'
+gem 'mysql2'#, '0.3.16'
 gem 'devise'#, git: 'https://github.com/gogovan/devise.git', branch: 'rails-5.1'
 gem 'listen'#, '~> 3.0.5'
 gem 'rack-cors'
-gem 'kaminari'
-gem 'rubocop'
-gem "graphql"
-gem "graphiql-rails"
-gem 'active_model_serializers'
+# gem 'kaminari'
+# gem 'active_model_serializers'
 # gem 'ejs'
 ### GENERATED ###
 gem 'rails'
