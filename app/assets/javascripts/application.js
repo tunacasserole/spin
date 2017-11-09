@@ -2,7 +2,7 @@
 //= require turbolinks
 //
 //= require dist/vendors/bower_components/jquery/dist/jquery.min
-//
+//= require vendors/bootstrap-growl.min
 //= require dist/vendors/bower_components/tether/dist/js/tether.min
 //= require dist/vendors/bower_components/bootstrap/dist/js/bootstrap.min
 //= require dist/vendors/bower_components/jquery.scrollbar/jquery.scrollbar.min
@@ -28,6 +28,7 @@
 //
 //= require dist/js/app
 //= require core
+//= require albums
 //= require vendors/jquery.bootgrid.min
 //
 //= require_tree .

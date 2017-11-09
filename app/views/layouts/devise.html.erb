@@ -22,5 +22,25 @@
 
   <%= yield :body_end %>
 
+
+  <script>
+    $(document).ready(function(){
+
+      <% if flash[:notice].present? %>
+      notify('<%= flash[:notice] %>', 'info');
+      <% end %>
+
+      <% if flash[:success].present? %>
+      notify('<%= flash[:success] %>', 'success');
+      <% end %>
+
+      <% if flash[:error].present? %>
+      notify('<%= flash[:error] %>', 'danger');
+      <% end %>
+
+    });
+  </script>
+
+
 </body>
 </html>

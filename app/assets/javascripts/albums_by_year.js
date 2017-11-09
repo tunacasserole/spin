@@ -1,6 +1,4 @@
-'use strict';
-
-$(document).ready(function(){
+$(document).on('turbolinks:load', function () {
     // Chart Data
 
     // Main

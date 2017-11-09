@@ -2,7 +2,7 @@ class AlbumsController < ApplicationController
   before_action :set_album, except:  [:index,:new,:create]
 
   def index
-    @albums = Album.order(:name)
+    @albums = Album.includes(:artist).order(:name)
 
     respond_to do |format|
       format.json { render json: process_search(Album, search: '%') }

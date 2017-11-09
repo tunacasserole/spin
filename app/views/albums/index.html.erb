@@ -43,30 +43,21 @@
             </div>
 
             <div class="toolbar__search">
-                <input type="text" placeholder="Search...">
-
+                <input id="album_search" type="text" placeholder="Search...">
                 <i class="toolbar__search__close zmdi zmdi-long-arrow-left" data-ma-action="toolbar-search-close"></i>
             </div>
         </div>
 
-        <div class="contacts row">
+        <div id="album_results"  class="contacts row">
+
+
+        </div>
+
+        <div id="allAlbums" class="contacts row">
 
             <% @albums.each_with_index do |a,i| %>
+            <%= render partial: 'row', locals: { resource: a, i: i } %>
 
-            <div class="col-xl-2 col-lg-3 col-sm-4 col-6">
-                <a href="" class="contacts__img">
-                    <div class="contacts__item">
-                        <%= image_tag "contacts/#{i+1}.jpg" if i < 16%>
-
-                        <div class="contacts__info">
-                            <strong><%= a.artist.name %></strong>
-                            <small><%= a.name %></small>
-                        </div>
-
-                        <button class="contacts__btn">Favorite</button>
-                    </a>
-                </div>
-            </div>
             <% end %>
 
 
