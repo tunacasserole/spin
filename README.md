@@ -5,6 +5,7 @@ In order to run this project, follow the standard rails workflow:
 - git clone
 - ensure ruby version is set to 2.4.0
 - bundle
+- create a database.yml (copy database.sample if needed)
 - rails db:create; db:migrate; db:seed
 - rails s
 - sign in to localhost:3000
